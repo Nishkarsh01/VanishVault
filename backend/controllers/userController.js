@@ -2,12 +2,11 @@ const User = require("../models/userModel");
 const generateToken = require("../config/generateToken");
 const expressAsyncHandler = require("express-async-handler");
 const NodeRSA = require("node-rsa");
-const crypto = require("crypto");
 
 const registerUser = expressAsyncHandler(async (req, res) => {
-  const { username, email, password } = req.body;
+  const { name, email, password } = req.body;
 
-  if (!username || !email || !password) {
+  if (!name || !email || !password) {
     res.status(400);
     throw new Error("Please enter all the fields");
   }
@@ -26,14 +25,13 @@ const registerUser = expressAsyncHandler(async (req, res) => {
 
 
   const user = await User.create({
-    username,
+    name,
     email,
     password,
     privateKey,
     publicKey,
   });
 
-  console.log(user);
   if (user) res.send("User created succesfully");
   else {
     res.status(400);
@@ -53,7 +51,7 @@ const authUser = expressAsyncHandler(async (req, res) => {
   if (await user.matchPassword(password)) {
     res.json({
       _id: user._id,
-      username: user.username,
+      name: user.name,
       email: user.email,
       token: generateToken(user._id)
     });
@@ -63,4 +61,21 @@ const authUser = expressAsyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, authUser };
+const allUsers = expressAsyncHandler(async (req, res) => {
+  const keyword = req.query.search
+    ? {
+        $or: [
+          { name: { $regex: req.query.search, $options: "i" } },
+          { email: { $regex: req.query.search, $options: "i" } },
+        ],
+      }
+    : {};
+
+  const users = await User.find(keyword)
+    .find({ _id: { $ne: req.user._id } })
+    .select("-password -privateKey");
+
+  res.json(users);
+});
+
+module.exports = { registerUser, authUser, allUsers };

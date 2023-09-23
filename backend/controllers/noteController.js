@@ -36,5 +36,13 @@ const readNote = expressAsyncHandler(async(req,res)=>{
     await Note.findByIdAndDelete(noteId);
 })
 
+const fetchNotes = expressAsyncHandler(async(req,res)=>{
+    const notes = await Note.find({to: req.user._id}).select("-textContent ");
+    if(notes){
+        res.json(notes);
+    } else {
+        res.status(404);
+    }
+})
 
-module.exports = {createNote, readNote};
+module.exports = {createNote, readNote, fetchNotes};

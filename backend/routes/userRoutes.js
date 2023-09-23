@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {registerUser, authUser} = require('../controllers/userController')
+const {protect} = require('../middleware/authMiddleware')
+const {registerUser, authUser, allUsers} = require('../controllers/userController')
 
 router.post('/register', registerUser)
-    .post('/login', authUser);
+    .post('/login', authUser)
+    .get('/:search',protect, allUsers);
 
 module.exports = router;
