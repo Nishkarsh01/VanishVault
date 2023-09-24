@@ -27,10 +27,10 @@
 
  # High Level Application Design
 We aim to design the application with microservice architecture and divid the whole backend application into the above shown services. All services for now will use the same user DB (MongoDB)
-![High Level Application Design](documentationimages/HighLevelDesign.drawio%20(1).png)
+![High Level Application Design](documentationImages/HighLevelDesign.drawio%20(1).png)
 
  # Entity Relationship (ERD) Diagrams
-![ERD Diagram](documentationimages/ERD%20Diagram.png)
+![ERD Diagram](documentationImages/ERD%20Diagram.png)
 
 # Tech Stack
 - Mongo DB 
