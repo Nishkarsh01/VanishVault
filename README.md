@@ -6,9 +6,9 @@
  
  Members:
  1) Nishkarsh Dubb (Nish) (He/him/his)
- 2) Mackenzie Van Vliet
- 3) Jaskaran Singh Malhotra
- 4) Rodrigo Wong Mac 
+ 2) Mackenzie Van Vliet (she/her)
+ 3) Jaskaran Singh Malhotra (he/him)
+ 4) Rodrigo Wong Mac (he/him)
 
 # Objective/Why would you use it
 
