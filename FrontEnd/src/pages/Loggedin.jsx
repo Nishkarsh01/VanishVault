@@ -93,15 +93,17 @@ const Loggedin = () => {
     }, [id]);
 
     const handleSearch = async (e) => {
-        const data = await axios('http://localhost:5010/user/' + search, {
-            headers: {
-                Authorization: 'Bearer ' + userInfo.token,
-            },
-        });
+        const data = await axios(
+            'http://localhost:5010/user?search=' + search,
+            {
+                headers: {
+                    Authorization: 'Bearer ' + userInfo.token,
+                },
+            }
+        );
 
         setNames(data.data);
         setFlag(true);
-        console.log(search);
     };
 
     const handleOutgoing = async (e) => {
