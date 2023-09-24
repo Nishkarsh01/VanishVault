@@ -45,18 +45,16 @@ const Home = () => {
                             borderRadius: 9,
                         }}
                     >
-                        <CardContent>
-                            <Typography
-                                sx={{
-                                    textAlign: 'center',
-                                    fontSize: '20px',
-                                    pt: 2,
-                                }}
-                            >
-                                New to the service?
-                                <Typography sx={{ fontSize: '40px' }}>
-                                    Glad to have you here!
-                                </Typography>
+                        <CardContent
+                            sx={{
+                                textAlign: 'center',
+                                fontSize: '20px',
+                                pt: 2,
+                            }}
+                        >
+                            New to the service?
+                            <Typography sx={{ fontSize: '40px' }}>
+                                Glad to have you here!
                             </Typography>
                         </CardContent>
                         <CardActions
@@ -94,18 +92,16 @@ const Home = () => {
                             borderRadius: 9,
                         }}
                     >
-                        <CardContent>
-                            <Typography
-                                sx={{
-                                    textAlign: 'center',
-                                    fontSize: '20px',
-                                    pt: 2,
-                                }}
-                            >
-                                Already a member?
-                                <Typography fontSize='40px'>
-                                    Welcome back!
-                                </Typography>
+                        <CardContent
+                            sx={{
+                                textAlign: 'center',
+                                fontSize: '20px',
+                                pt: 2,
+                            }}
+                        >
+                            Already a member?
+                            <Typography fontSize='40px'>
+                                Welcome back!
                             </Typography>
                         </CardContent>
                         <CardActions
