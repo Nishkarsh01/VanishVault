@@ -9,8 +9,10 @@ import {
 } from '@mui/material';
 
 const MessageDialog = (props) => {
-    const { open, setOpen, message } = props;
+    const { open, setOpen, message,setId, setMsg } = props;
     const handleBackdropClick = () => {
+        setId('');
+        setMsg('');
         setOpen(false);
     };
 

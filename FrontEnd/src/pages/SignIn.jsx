@@ -1,7 +1,8 @@
 import { Typography, Box, FormLabel, Button, Stack, Grid } from '@mui/material';
 import PasswordTextFeild from '../components/PasswordTextField';
 import FormikTextField from '../components/FormikTextField';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import VanishVault from '../assets/VanishVault.svg';
 
@@ -11,6 +12,7 @@ import BackButton from '../components/BackButton';
 import axios from 'axios';
 
 const SignIn = () => {
+    const navigate = useNavigate();
     const initialValue = {
         email: '',
         password: '',
@@ -33,7 +35,6 @@ const SignIn = () => {
     // });
 
     const handleLogin = async (e) => {
-        console.log(e.email);
         try {
             const user = await axios.post('http://localhost:5010/user/login', {
                 email: e.email,
@@ -41,11 +42,10 @@ const SignIn = () => {
             });
             if (user) {
                 localStorage.setItem('userInfo', JSON.stringify(user.data));
-                alert('Logged in');
+                navigate('/successin');
             }
         } catch (err) {
             alert(err.message);
-            console.log(err.message);
         }
     };
     const formik = useFormik({
