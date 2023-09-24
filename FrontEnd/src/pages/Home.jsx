@@ -22,12 +22,7 @@ const Home = () => {
 
     const [checked1, setChecked1] = useState(false);
     const [checked2, setChecked2] = useState(false);
-    const handleChange1 = () => {
-        setChecked1((prev) => !prev);
-    };
-    const handleChange2 = () => {
-        setChecked2((prev) => !prev);
-    };
+
     return (
         <Box
             sx={{
