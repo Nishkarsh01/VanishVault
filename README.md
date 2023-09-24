@@ -23,7 +23,7 @@
 - Police services can use Vanish Vault in SARs (Search and Rescue) missions to communicate important location and time details from their secure servers to third party teams.
 
 # Video Demo
-[![Indeed Clone Demo]("coverimage")]("video link")
+[![VanishVault Demo]("coverimage")]("video link")
 
  # High Level Application Design
 We aim to design the application with microservice architecture and divid the whole backend application into the above shown services. All services for now will use the same user DB (MongoDB)
