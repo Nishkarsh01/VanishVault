@@ -102,11 +102,7 @@ const SignIn = () => {
                         Please enter your details
                     </Typography>
 
-                    <form
-                        formik={formik}
-                        style={{ fontSize: '40px' }}
-                        autoComplete={false}
-                    >
+                    <form formik={formik} style={{ fontSize: '40px' }}>
                         <Stack>
                             <Box>
                                 <FormLabel
@@ -136,7 +132,7 @@ const SignIn = () => {
                             </Box>
                             <Button
                                 onClick={formik.handleSubmit}
-                                // disabled={formik.isValid}
+                                disabled={!formik.isValid}
                                 type='submit'
                                 fullWidth
                                 variant='contained'
@@ -156,7 +152,7 @@ const SignIn = () => {
                         </Stack>
                     </form>
                     <Typography
-                        sx={{ my: '1.3em' }}
+                        sx={{ mt: '1.3em' }}
                         variant='body1'
                         textAlign='right'
                     >
