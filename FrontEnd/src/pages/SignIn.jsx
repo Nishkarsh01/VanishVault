@@ -7,6 +7,7 @@ import VanishVault from '../assets/VanishVault.svg';
 
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import BackButton from '../components/BackButton';
 
 const SignIn = () => {
     const initialValue = {
@@ -83,6 +84,9 @@ const SignIn = () => {
                 </Button>
             </Stack>
             <Grid container justifyContent='center' height='89vh'>
+                <Grid item sx={{ mt: 7 }}>
+                    <BackButton />
+                </Grid>
                 <Grid
                     xs={10}
                     md={8}

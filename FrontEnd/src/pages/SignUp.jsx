@@ -2,6 +2,7 @@ import { Typography, Box, FormLabel, Button, Stack, Grid } from '@mui/material';
 import PasswordTextFeild from '../components/PasswordTextField';
 import FormikTextField from '../components/FormikTextField';
 import { Link } from 'react-router-dom';
+import BackButton from '../components/BackButton';
 
 import VanishVault from '../assets/VanishVault.svg';
 
@@ -97,6 +98,9 @@ const SignUp = () => {
                 </Button>
             </Stack>
             <Grid container justifyContent='center' minHeight='89vh'>
+                <Grid item sx={{ mt: 7 }}>
+                    <BackButton />
+                </Grid>
                 <Grid
                     xs={10}
                     md={8}
