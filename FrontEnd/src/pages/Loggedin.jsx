@@ -118,8 +118,11 @@ const Loggedin = () => {
             }
         );
         if (data) alert('Sent succesfully');
-        console.log(recipient);
-        console.log(outgoing);
+
+        setFlag(false);
+        setSearch('');
+        setRecipient('');
+        setOutgoing('');
     };
 
     return (
