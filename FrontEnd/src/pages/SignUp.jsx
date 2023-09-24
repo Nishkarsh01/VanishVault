@@ -8,36 +8,31 @@ import VanishVault from '../assets/VanishVault.svg';
 
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import axios from 'axios';
 
 const SignUp = () => {
     const initialValue = {
         email: '',
         password1: '',
         password2: '',
-        firstName: '',
-        lastName: '',
+        name: '',
     };
 
-    // const { isLoading, mutate } = useMutation((payload) => api.login(payload), {
-    //     onSuccess: () => {
-    //         //Store e-mail address & password in window.history.state and will be fetched in 2FA
-    //         navigate('/auth/2fa', {state: {email: email, password: password}});
-    //     },
-    //     onError: (error) => {
-    //         if (error.code === 'ERR_NETWORK') {
-    //             alert.error(error?.message)
-    //         }
-
-    //         if (error?.response?.status === 401) {
-    //             alert.error('Invalid credentials. Please try again.');
-    //         }
-    //     }
-    // });
-
-    const handleLogin = (e) => {
+    const handleSubmit = async (e) => {
         console.log(e);
-
-        // mutate(payload); // Trigger API call to login
+        try {
+            const data = await axios.post(
+                'http://localhost:5010/user/register',
+                {
+                    name: e.name,
+                    email: e.email,
+                    password: e.password1,
+                }
+            );
+            alert(data.data);
+        } catch (err) {
+            alert(err.message);
+        }
     };
 
     const formik = useFormik({
@@ -59,10 +54,9 @@ const SignUp = () => {
             password2: Yup.string()
                 .oneOf([Yup.ref('password1'), null], 'Passwords must match')
                 .required('Confirm your password please'),
-            firstName: Yup.string().required('Pleas enter your first name'),
-            lastName: Yup.string().required('Please enter your last name'),
+            name: Yup.string().required('Please enter your name'),
         }),
-        onSubmit: handleLogin,
+        onSubmit: handleSubmit,
     });
 
     return (
@@ -122,40 +116,22 @@ const SignUp = () => {
 
                     <form formik={formik} style={{}}>
                         <Stack>
-                            <Grid container columnSpacing={5}>
-                                <Grid item xs={12} md={6}>
-                                    <FormLabel
-                                        sx={{
-                                            color: 'black',
-                                            fontSize: '19px',
-                                        }}
-                                    >
-                                        First Name
-                                    </FormLabel>
-                                    <FormikTextField
-                                        formik={formik}
-                                        name='firstName'
-                                        placeHolder='Please enter your first name'
-                                        sx={{ my: 1 }}
-                                    />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FormLabel
-                                        sx={{
-                                            color: 'black',
-                                            fontSize: '19px',
-                                        }}
-                                    >
-                                        Last Name
-                                    </FormLabel>
-                                    <FormikTextField
-                                        formik={formik}
-                                        name='lastName'
-                                        placeHolder='Please enter your last  name'
-                                        sx={{ my: 1 }}
-                                    />
-                                </Grid>
-                            </Grid>
+                            <Box>
+                                <FormLabel
+                                    sx={{
+                                        color: 'black',
+                                        fontSize: '19px',
+                                    }}
+                                >
+                                    Name
+                                </FormLabel>
+                                <FormikTextField
+                                    formik={formik}
+                                    name='name'
+                                    placeHolder='Please enter your last  name'
+                                    sx={{ my: 1 }}
+                                />
+                            </Box>
                             <Box>
                                 <FormLabel
                                     sx={{ color: 'black', fontSize: '19px' }}

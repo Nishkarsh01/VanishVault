@@ -8,6 +8,7 @@ import VanishVault from '../assets/VanishVault.svg';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import BackButton from '../components/BackButton';
+import axios from 'axios';
 
 const SignIn = () => {
     const initialValue = {
@@ -31,12 +32,22 @@ const SignIn = () => {
     //     }
     // });
 
-    const handleLogin = (e) => {
-        console.log(e);
-
-        // mutate(payload); // Trigger API call to login
+    const handleLogin = async (e) => {
+        console.log(e.email);
+        try {
+            const user = await axios.post('http://localhost:5010/user/login', {
+                email: e.email,
+                password: e.password,
+            });
+            if (user) {
+                localStorage.setItem('userInfo', JSON.stringify(user.data));
+                alert('Logged in');
+            }
+        } catch (err) {
+            alert(err.message);
+            console.log(err.message);
+        }
     };
-
     const formik = useFormik({
         initialValues: initialValue,
         validationSchema: Yup.object({
