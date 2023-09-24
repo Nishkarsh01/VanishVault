@@ -5,7 +5,6 @@ const userSchema = mongoose.Schema({
     name:{
         type: String,
         require: true,
-        unique:true
     },
     email:{
         type:String,
@@ -15,6 +14,10 @@ const userSchema = mongoose.Schema({
     password:{
         type: String,
         require:true,
+    },
+    isVerified:{
+        type:Boolean,
+        default: false
     },
     privateKey:{
         type: String,
