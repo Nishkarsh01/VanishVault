@@ -34,27 +34,7 @@ const Loggedin = () => {
     const [flag, setFlag] = useState(false);
 
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    const [names, setNames] = useState([
-        'John',
-        'Alice',
-        'Bob',
-        'Emma',
-        'David',
-        'Olivia',
-        'Sophia',
-        'Liam',
-        'Ava',
-        'Ethan',
-        'Mia',
-        'Noah',
-        'Isabella',
-        'James',
-        'Charlotte',
-        'Logan',
-        'Ella',
-        'Michael',
-        'Grace',
-    ]);
+    const [names, setNames] = useState([]);
 
     const logoutHandle = () => {
         localStorage.clear();
