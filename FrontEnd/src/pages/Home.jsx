@@ -65,30 +65,13 @@ const Home = () => {
                 {checked1 ? (
                     <Slide in={checked1} container={containerRef1.current}>
                         <Typography sx={{ px: 5, pb: 3 }}>
-                            rem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum. Why do we use it? It is a long
-                            established fact that a reader will be distracted by
-                            the readable content of a page when looking at its
-                            layout. The point of using Lorem Ipsum is that it
-                            has a more-or-less normal distribution of letters,
-                            as opposed to using 'Content here, content here',
-                            making it look like readable English. Many desktop
-                            publishing packages and web page editors now use
-                            Lorem Ipsum as their default model text, and a
-                            search for 'lorem ipsum' will uncover many web sites
-                            still in their infancy. Various versions have
-                            evolved over the years, sometimes by accident,
-                            sometimes on purpose (injected humour and the like).
+                            A web-based application that allows authenticated
+                            users to create secure private rooms for sharing
+                            sensitive information. Once all assigned users have
+                            accessed the shared data within these rooms, the
+                            information is automatically and permanently deleted
+                            from the database, ensuring the highest level of
+                            data privacy and security.
                         </Typography>
                     </Slide>
                 ) : null}
@@ -117,30 +100,34 @@ const Home = () => {
                 {checked2 ? (
                     <Slide in={checked2} container={containerRef2.current}>
                         <Typography sx={{ px: 5, pb: 3 }}>
-                            rem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum. Why do we use it? It is a long
-                            established fact that a reader will be distracted by
-                            the readable content of a page when looking at its
-                            layout. The point of using Lorem Ipsum is that it
-                            has a more-or-less normal distribution of letters,
-                            as opposed to using 'Content here, content here',
-                            making it look like readable English. Many desktop
-                            publishing packages and web page editors now use
-                            Lorem Ipsum as their default model text, and a
-                            search for 'lorem ipsum' will uncover many web sites
-                            still in their infancy. Various versions have
-                            evolved over the years, sometimes by accident,
-                            sometimes on purpose (injected humour and the like).
+                            -Allow authenticated users to create secure private
+                            rooms for sharing sensitive information.
+                            <br />
+                            - Once all assigned users have accessed the shared
+                            data within these rooms, the information is
+                            automatically and permanently deleted from the
+                            database, ensuring the highest level of data privacy
+                            and security.
+                            <br />
+                            - Vanish Vault can be used for sending messages from
+                            patient to provider in compliance with PHIPA
+                            (personal health information protection act).
+                            <br />
+                            - Instead of using email or Teams, employees in HR
+                            can send employee based information using Vanish
+                            Vault .<br />
+                            - Vanish Vault can be used for sending sensitive
+                            customer information in SMB in compliance with GDPR
+                            (general data protection regulation).
+                            <br />
+                            - For digital marketing departments, Vanish Vault
+                            can be used to send shared account details.
+                            <br />
+                            - Police services can use Vanish Vault in SARs
+                            (Search and Rescue) missions to communicate
+                            important location and time details from their
+                            secure servers to third party teams.
+                            <br />
                         </Typography>
                     </Slide>
                 ) : null}
